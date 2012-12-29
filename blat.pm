@@ -7,7 +7,7 @@ use Carp;
 
 use vars '$VERSION';
 
-$VERSION = 0.02;
+$VERSION = 0.03;
 
 sub Net::FTP::slurp
 # store a remote file to a scalar
@@ -179,9 +179,6 @@ I would like to see C<slurp> and C<blat> included in the Net::FTP
 distribution.  I was surprised that they (or equivalents)
 were not included.
 
-If ever the probelms with AUTOLOAD and Net::FTP are resolved,
-in my opinion that would be a good time to add these methods.
-
 =head1 AUTHOR
 
 David Nicol <davidnico@cpan.org>
@@ -203,9 +200,18 @@ by Graham Barr.
 
 =head1 COPYRIGHT
 
-Copyright 2003 David Nicol
+Copyright 2003,2013 David Nicol
 
 These methods are free software; you can redistribute and/or modify
 them under the same terms as Perl itself.
+
+Version 0.03 issues a spurious PASS for all tests when the hardcoded
+FTP server that has been getting small test files blatted to it for
+the last decade is down.
+
+If you would like to propose modifications (such as integrating
+a pure-perl FTP server running on localhost into the testing) this
+module may be cloned from https://github.com/davidnicol/cpan-Net-FTP-blat
+
 
 =cut
